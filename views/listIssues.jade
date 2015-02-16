@@ -2,21 +2,26 @@ extends layout.jade
 
 block content
     div.row
-        div.three.columns
-            strong= "Title"
+        div.two.columns
+            strong= "Number"
+        div.two.columns
+            strong= "Creator"
         div.three.columns
             strong= "State"
         div.three.columns
             strong= "Created At"
-        div.three.columns
+        div.two.columns
             strong= "Comments"
     each item in issues
         div.row
-            div.three.columns
-                = item.title
+            div.two.columns
+                a(href="/view/issue/" + item._id)
+                    = item.number
+            div.two.columns
+                = item.user.login
             div.three.columns
                 = item.state
             div.three.columns
                 = item.created_at
-            div.three.columns
+            div.two.columns
                 = item.comments

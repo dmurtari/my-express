@@ -6,7 +6,7 @@ module.exports = function(app) {
         var issues = app.db.get('issues')
 
          var q = {
-            '_id': req.params.issue_id            
+            'id': req.params.issue_id            
         }
 
         var issue = issues.findOne(q, function(err, item) {

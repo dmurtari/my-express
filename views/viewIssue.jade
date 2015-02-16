@@ -1,4 +1,20 @@
 extends layout
 
 block content
-  issue.title
+    h3= "Issue Number " + issue.number
+    p= "Contents: " + issue.title
+
+    h5= "Creator Information"
+    div.row
+        div.three.columns
+            img(width='200' src=issue.user.avatar_url)
+        div.nine.columns
+            strong= "Name: " 
+                a(href=issue.user.html_url)
+                    =issue.user.login
+            br
+            strong= "User type: " + issue.user.type
+
+    h5= "Contents"
+    =issue.body
+
