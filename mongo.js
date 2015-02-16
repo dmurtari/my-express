@@ -16,6 +16,10 @@ app.set('view engine', 'jade');
 // set where the static contents are (e.g., css, js)
 app.use(express.static(__dirname + '/public'));
 
+// default to index
+app.get('/', function(req, res) {
+    res.render('index.jade')
+})
 
 require('./mongo/eventList')(app)
 require('./mongo/eventView')(app)

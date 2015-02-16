@@ -15,7 +15,7 @@ block content
     each item in issues
         div.row
             div.two.columns
-                a(href="/view/issue/" + item._id)
+                a(href="/view/issue/" + item.id)
                     = item.number
             div.two.columns
                 = item.user.login

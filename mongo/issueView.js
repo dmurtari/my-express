@@ -5,16 +5,14 @@ module.exports = function(app) {
         // get the issues collection
         var issues = app.db.get('issues')
 
-         var q = {
-            'id': req.params.issue_id            
+        var q = {
+            'id': Number(req.params.issue_id)            
         }
 
         var issue = issues.findOne(q, function(err, item) {
-
             res.render('viewIssue.jade', {
                 issue: item
             })
         })
-
     })
 }

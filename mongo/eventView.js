@@ -5,16 +5,14 @@ module.exports = function(app) {
         // get the events collection
         var events = app.db.get('events')
 
-         var q = {
-            'id': req.params.event_id            
+        var q = {
+            'id': req.params.event_id
         }
 
-        var event = events.findOne(q, function(err, item) {
-
+        var event_select = events.findOne(q, function(err, item) {
             res.render('viewEvent.jade', {
-                event: item
+                event_select: item
             })
         })
-
     })
 }

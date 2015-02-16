@@ -7,11 +7,9 @@ module.exports = function(app) {
 
         var q = {}
 
-        // execute the query to find those matched limiting to 20
         issues.find(q, {
             limit: 30
         }, function(err, issues) {
-
             res.render('listIssues.jade', {
                 issues: issues
             })

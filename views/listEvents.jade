@@ -13,8 +13,8 @@ block content
     each item in events
         div.row
             div.three.columns
-                a(href="/view/event/" + item._id)
-                    =item.id
+                a(href="/view/event/" + item.id)
+                    = item.id
             div.three.columns
                 =item.type
             div.three.columns
