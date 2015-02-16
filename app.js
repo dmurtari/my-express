@@ -12,6 +12,10 @@ app.set('view engine', 'jade');
 // set where the static contents are (e.g., css, js)
 app.use(express.static(__dirname + '/public'));
 
+app.get('/', function(req, res) {
+    res.render('index.jade', {})
+})
+
 app.get('/list/events', function(req, res) {
     res.render('listEvents.jade', {
         events: events
@@ -25,8 +29,6 @@ app.get('/list/issues', function(req, res) {
 })
 
 app.get('/view/event/:event_id', function(req, res) {
-    // TODO: lookup a event by a event_id
-    // hint: use lodash's find function to look up a event by event_id
     var event = _.find(events, {'event_id' : req.params.event_id})
     res.render('viewEvent.jade', {
         event: event
