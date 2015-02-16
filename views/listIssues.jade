@@ -1,0 +1,22 @@
+extends layout.jade
+
+block content
+    div.row
+        div.three.columns
+            strong= "Title"
+        div.three.columns
+            strong= "State"
+        div.three.columns
+            strong= "Created At"
+        div.three.columns
+            strong= "Comments"
+    each item in issues
+        div.row
+            div.three.columns
+                = item.title
+            div.three.columns
+                = item.state
+            div.three.columns
+                = item.created_at
+            div.three.columns
+                = item.comments
