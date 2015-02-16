@@ -1,4 +1,18 @@
 extends layout
 
 block content
-	event.type
+	h3
+		= "Details about a " + event.type + " by " + event.actor.login
+	strong= "Source Repo:"
+	p
+		a(href=event.repo.url)
+			=event.repo.name
+	strong= "Organization Info:"
+	p
+		a(href=event.repo.url)
+			= event.org.login
+	strong= "Payload Information"
+	ul
+		li= "Reference type: " + event.payload.ref_type
+		li= "Master branch: " + event.payload.master_branch
+		li= "Pusher type: " + event.payload.pusher_type

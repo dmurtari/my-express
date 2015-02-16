@@ -1,6 +1,23 @@
 extends layout.jade
 
 block content
+    div.row
+        div.three.columns
+            strong= "Event ID"
+        div.three.columns
+            strong= "Event Type"
+        div.three.columns
+            strong= "Creator Name"
+        div.three.columns
+            strong= "Creation Date"
     each item in events
         div.row
-            =item.type
+            div.three.columns
+                a(href="/view/event/" + item._id)
+                    =item.id
+            div.three.columns
+                =item.type
+            div.three.columns
+                =item.actor.login
+            div.three.columns
+                =item.created_at
