@@ -42,8 +42,9 @@ app.get('/view/issue/:issue_id', function(req, res) {
     })
 })
 
+require('./mongo')(app)
+
 var server = app.listen(process.env.PORT || 3000, function() {
-    require('./mongo')(app)
     var host = server.address().address
     var port = server.address().port
 
